@@ -1,59 +1,85 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import '../styles/home.css';
+
+const title = 'Frutta Gala';
+const description =
+	'Frutta Gala 是一家位于卡尔加里市中心的独立甜品与饮品门店。主理人追求卓越的味道，并以一套安静、可重复的体系经营每一天。';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+SC:wght@400;500&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
-	<body>
-		<Header />
+	<body class="min-h-screen bg-paper font-serif text-ink antialiased">
+		<header class="border-b border-line">
+			<nav
+				class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 md:px-10"
+				aria-label="主导航"
+			>
+				<a href="#brand" class="text-[0.95rem] tracking-[0.28em]">Frutta Gala</a>
+				<ul class="flex items-center gap-6 text-sm tracking-[0.18em] text-mist md:gap-10">
+					<li><a class="transition-colors hover:text-ink" href="#brand">品牌</a></li>
+					<li><a class="transition-colors hover:text-ink" href="#taste">味道</a></li>
+					<li><a class="transition-colors hover:text-ink" href="#visit">到访</a></li>
+				</ul>
+			</nav>
+		</header>
+
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to
-				build a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your{' '}
-				<code>astro.config.mjs</code> file. You can customize your setup with{' '}
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like
-				Tailwind, React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>
-					Edit this page in <code>src/pages/index.astro</code>
-				</li>
-				<li>
-					Edit the site header items in <code>src/components/Header.astro</code>
-				</li>
-				<li>
-					Add your name to the footer in <code>src/components/Footer.astro</code>
-				</li>
-				<li>
-					Check out the included blog posts in <code>src/content/blog/</code>
-				</li>
-				<li>
-					Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code>
-				</li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to{' '}
-				<a href="https://docs.astro.build/">read the docs</a> or{' '}
-				<a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out{' '}
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a> by{' '}
-				<a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+			<section
+				id="brand"
+				class="mx-auto flex min-h-[calc(100vh-4.25rem)] max-w-6xl flex-col justify-center px-6 py-24 md:px-10"
+			>
+				<p class="text-xs tracking-[0.42em] text-mist">卡尔加里市中心 · 独立门店</p>
+				<h1 class="mt-8 text-6xl leading-none font-normal tracking-tight md:text-8xl">Frutta Gala</h1>
+				<p class="mt-10 max-w-2xl text-lg leading-9 text-mist md:text-xl md:leading-10">
+					在卡尔加里市中心，Frutta Gala
+					用一份克制的菜单，招待愿意把节奏放慢的人。甜品与饮品追求清楚而准确的味道：当季的果、刚刚好的甜、干净的余韵。主理人同样在意这家店如何被运转——从选果、备料、出品到接待，每一环都收进一套安静、可重复的体系里。卓越不是偶尔闪现的灵感，而是每一天都能被稳定地端上桌的结果。
+				</p>
+			</section>
+
+			<section id="taste" class="border-t border-line">
+				<div class="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:grid-cols-3 md:px-10">
+					<article>
+						<p class="text-xs tracking-[0.32em] text-mist">01</p>
+						<h2 class="mt-4 text-3xl font-normal">味道</h2>
+						<p class="mt-4 leading-8 text-mist">少而精确。每一种甜与每一种饮，都只保留真正必要的层次。</p>
+					</article>
+					<article>
+						<p class="text-xs tracking-[0.32em] text-mist">02</p>
+						<h2 class="mt-4 text-3xl font-normal">体系</h2>
+						<p class="mt-4 leading-8 text-mist">门店的节奏被认真设计。稳定的出品，来自可被重复的日常。</p>
+					</article>
+					<article>
+						<p class="text-xs tracking-[0.32em] text-mist">03</p>
+						<h2 class="mt-4 text-3xl font-normal">市中心</h2>
+						<p class="mt-4 leading-8 text-mist">位于卡尔加里市中心，适合路过停留，也适合把下午留在这里。</p>
+					</article>
+				</div>
+			</section>
+
+			<section id="visit" class="border-t border-line">
+				<div
+					class="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-24 md:flex-row md:items-end md:justify-between md:px-10"
+				>
+					<div>
+						<p class="text-xs tracking-[0.32em] text-mist">到访</p>
+						<h2 class="mt-4 text-4xl font-normal md:text-5xl">卡尔加里市中心</h2>
+					</div>
+					<p class="max-w-sm leading-8 text-mist">甜品与饮品。独立门店。以味道立身，以体系长久。</p>
+				</div>
+			</section>
 		</main>
-		<Footer />
 	</body>
 </html>

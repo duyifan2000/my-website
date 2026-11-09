@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+	--font-serif: "Cormorant Garamond", "Noto Serif SC", "Songti SC", "PMingLiU", serif;
+	--color-paper: #f6f3ee;
+	--color-ink: #1c1a17;
+	--color-mist: #6a645c;
+	--color-line: #e4dfd6;
+}
